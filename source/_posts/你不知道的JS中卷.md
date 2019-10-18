@@ -2,8 +2,6 @@
 
 title: 你不知道的JavaScript中卷-读书笔记
 date: 2019-10-07 21:47
-comments: true
-toc: true
 tags: JavaScript Notes
 
 ---
@@ -24,7 +22,6 @@ tags: JavaScript Notes
 - 我个人建议无论什么情况下都不要使== true 和 == false。
 - (1) 如果x 为null，y 为undefined，则结果为true。
 - (2) 如果x 为undefined，y 为null，则结果为true。
-
 
 	    "0" == null; // false
     	"0" == undefined; // false

@@ -3,11 +3,11 @@
 ## Source: https://github.com/hexojs/hexo/
 
 # Site
-title: ShawHal's blog.
-subtitle: Life is short, enjoy yourself.
-description: Some tech notes and learning process.
+title: Shaw's blog.
+subtitle: Life is short, carpe diem.
+description: Some tech notes and life experience.
 keywords: 
-author: ShawHal
+author: Shaw
 language: zh-Hans
 timezone:
 
@@ -73,7 +73,7 @@ pagination_dir: page
 # Extensions
 ## Plugins: https://hexo.io/plugins/
 ## Themes: https://hexo.io/themes/
-theme: codeland
+theme: next
 
 # Deployment
 ## Docs: https://hexo.io/docs/deployment.html

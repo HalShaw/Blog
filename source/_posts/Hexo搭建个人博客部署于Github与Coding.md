@@ -20,28 +20,21 @@ tags: Hexo Blog
 - 有不想用国外网站的童鞋也可以使用国内的[Coding](https://coding.net)，原理一样，反正都是仿Github的。虽说国外网站有可能被墙，而且比起国内的慢一点，但是我同时部署了Coding和Github，后者瞬间就能访问了，而前者，呵呵。
 - 对了，第一个坑来了，安装完毕之后一定要重启，不然后面使用*npm*命令安装Hexo时会提示找不到命令，然后才能继续后面的步骤。重启完毕之后就可以愉快地开始安装了，在Git Bash端执行下面的命令就可以安装Hexo了。
 
-``` 
-    $ npm install hexo-cli -g
-``` 
+    	$ npm install hexo-cli -g
 
 - 然后初始化hexo，进入文件之后就可以执行后面的命令了。
-
-```
-    $ hexo init blog
-    $ cd blog
-```
+	    $ hexo init blog
+	    $ cd blog
     
 - 介绍一下hexo下用到的命令：
-
-``` 
-$ hexo g/generate #生成静态文件
-$ hexo s/server #启动服务器，主要用来本地预览
-$ hexo d/deploy #将本地文件发布到github或Coding上
-$ hexo n/new "postName"#新建一篇文章
-$ hexo n/new page "pageName" #新建页面
-$ hexo h/help # 查看帮助
-$ hexo v/version #查看Hexo的版本
-```
+ 
+		$ hexo g/generate #生成静态文件
+		$ hexo s/server #启动服务器，主要用来本地预览
+		$ hexo d/deploy #将本地文件发布到github或Coding上
+		$ hexo n/new "postName"#新建一篇文章
+		$ hexo n/new page "pageName" #新建页面
+		$ hexo h/help # 查看帮助
+		$ hexo v/version #查看Hexo的版本
 
 - 进入文件之后执行**hexo g**和**hexo s**之后然后用浏览器打开*http://localhost:4000/*，不出意外的话，你就可以看到你的博客了，就像下面这个样子的，当然这个博客只是在本地的，hexo3.0使用的默认主题是landscape。
 
@@ -64,53 +57,40 @@ $ hexo v/version #查看Hexo的版本
 
 - 好了，到此，你已经配置好本地，然后预览好之后就可以发布了，使用下面
 
-``` 
-hexo g
-hexo d
-``` 
+		hexo g
+		hexo d
 
 - 命令就可以啦，但是天有不测风云，遇到错误，
 
-```
- ERROR Deployer not found : github
-```
+ 		ERROR Deployer not found : github
 
 - 不用急，执行一下这条命令就可以，还有可能遇到说你的github地址不是仓库，那是因为你的地址没有设置正确，检查一下空格之类的。
 
-```
-npm install hexo-deployer-git --save
-```
+		npm install hexo-deployer-git --save
 
 - 要想以上命令起作用，前提是你的配置文件已经配置如下，这个是同时发布到Github和Coding上面
 
-```
-deploy:
-  type: git
-  repo: 
-    coding: git@git.coding.net:HalShaw/halshaw.git,master
-    github: https://github.com/HalShaw/halshaw.github.io.git,master
-```
+		deploy:
+		  type: git
+		  repo: 
+		    coding: git@git.coding.net:HalShaw/halshaw.git,master
+		    github: https://github.com/HalShaw/halshaw.github.io.git,master
+
 
 - 如果只想发布到GIthub上，稍微改一下
 
-```
-deploy:  
-  type: git
-  repository: https://github.com/HalShaw/halshaw.github.io.git 
-  branch: master
-```
+		deploy:  
+		  type: git
+		  repository: https://github.com/HalShaw/halshaw.github.io.git 
+		  branch: master
 
 - 一切顺利的话，就可以啦。但是，慢着，又出现问题了。命令行返回
-
-```
-Invalid argument
-```
+		
+		Invalid argument		
 
 - what?什么鬼？明明本地都可以成功预览了，但是为什么发布不了了呢，我就被这个**hexo d**搞了好久，查了好久才明白，原因是我在我的hexo目录下，我又执行了
 
-```
-npm install
-```
+		npm install
 
 - 又安装了一个hexo，所以不能发布了，所以删除之后就可以高兴滴执行**hexo d**啦。
 - 谢天谢地，终于发布上去了，然而，不到一分钟，我就收到了Github发来的邮件
@@ -119,39 +99,36 @@ npm install
 
 创建page失败，madan，招谁惹谁了我，怎么遇到这么多问题呢。又是一番搜索之后找到了一个我认为满意的答案
 
-```
-- Make a backup of the content locally
-- Delete the repository from GitHub
-- Delete the repository locally
-- Recreate the repository, ensuring that you don't include the repository within the repository locally, which is what you did previously
-- Push it to GitHub
-```
+		- Make a backup of the content locally
+		- Delete the repository from GitHub
+		- Delete the repository locally
+		- Recreate the repository, ensuring that you don't include the repository within the repository locally, which is what you did previously
+		- Push it to GitHub
 
 - 意思就是我git仓库里面又包括其他仓库啦，让我把他们搞好之后再上传，果然，我到主题文件下把.git文件删除之后，然后再次发布，终于，大功告成。就是刚才那个小清新的博客啦。
 - 然后就开始写文章吧，该博客只支持[markdown](http://www.jianshu.com/p/q81RER/)语法，所以不会的小伙伴也不要怕，花个几分钟就可以上手啦。在Git终端输入上面的新建文章命令就可以新建一篇文章啦。然后会显示文章所在路径，找到并打开开始写文章吧。
 
-```
-$ hexo n my first
-INFO  Created: D:\hexo1\hexo\source\_posts\first.md
-```
+	
+		$ hexo n my first
+		INFO  Created: D:\hexo1\hexo\source\_posts\first.md
+
 
 - 打开之后是这样的，你可以自己设置标签和分类，然后就开始写你自己的故事吧。
 
-```
-title: my first#标题和日期必须唯一，因为访问文章的url是根据二者生成的
-date: 2016-08-25 15:33:58
-tags: 'try' #标签
-categories: "技术" #分类
-```
+		title: my first#标题和日期必须唯一，因为访问文章的url是根据二者生成的
+		date: 2016-08-25 15:33:58
+		tags: 'try' #标签
+		categories: "技术" #分类
+
 
 - 然后之后写文章每次部署都需要执行如下的命令，需要先清理数据库，生成静态文件之后预览，然后发布。
 
-```
-hexo clean
-hexo g
-hexo s
-hexo d
-```
+
+		hexo clean
+		hexo g
+		hexo s
+		hexo d
+
 
 - 好啦，到这里，文章已经写好，然后发布之后就可以去找小伙伴炫耀啦。
 
