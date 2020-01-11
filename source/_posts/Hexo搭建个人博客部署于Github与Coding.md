@@ -2,10 +2,8 @@
 
 title: Hexo搭建个人博客部署于Github与Coding
 date: 2016-08-14 16:07
-comments: true
-toc: true
 tags: Hexo Blog
-
+categories: Hexo
 ---
 
 - 早就听说可以自己弄一个博客然后免费部署到github上面，但是一直没机会着手去做，前几天，机缘巧合之下，发现了[Hexo](https://www.npmjs.com/package/hexo)这个好东西，这才发现原来它就是我苦苦找寻的的东西啊。真是“**踏破铁鞋无觅处，得来全不费功夫。**”啊。
@@ -15,6 +13,8 @@ tags: Hexo Blog
 ![](http://upload-images.jianshu.io/upload_images/1741029-4f7a27cef1b46665.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
 
 ![Git命令](http://upload-images.jianshu.io/upload_images/1741029-e5035d2c74ba60c3.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+
+<!--more-->
 
 - 然后是**[Node.js](https://nodejs.org/en/)下载**,稳定版和最新版都可以，个人喜好，Hexo是靠node驱动，所以以上除了github以外都是是必须的。
 - 有不想用国外网站的童鞋也可以使用国内的[Coding](https://coding.net)，原理一样，反正都是仿Github的。虽说国外网站有可能被墙，而且比起国内的慢一点，但是我同时部署了Coding和Github，后者瞬间就能访问了，而前者，呵呵。

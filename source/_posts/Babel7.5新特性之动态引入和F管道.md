@@ -3,8 +3,8 @@
 title: Babel 7.5新特性之动态引入和F#管道
 date: 2019-08-26 23:19
 comments: true
-toc: true
 tags: JavaScript Babel
+categories: JavaScript
 
 ---
 ![Babel](https://upload-images.jianshu.io/upload_images/1741029-16b74fc4346ad169.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
@@ -27,6 +27,8 @@ tags: JavaScript Babel
 
 
 以上语法的好处就是当链接多个函数的时候可以使代码更具可读性，这就是管道操作符的最明显的作用。
+
+<!--more-->
 
 ### 考虑以下几行代码：
 

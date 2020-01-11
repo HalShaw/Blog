@@ -2,8 +2,8 @@
 
 title: 你不知道的JavaScript中卷-读书笔记
 date: 2019-10-07 21:47
-tags: JavaScript Notes
-
+tags: JavaScript Notes 你不知道的JavaScript中卷
+categories: JavaScript
 ---
 
 ![JavaScript](https://upload-images.jianshu.io/upload_images/1741029-8c92a4538cc134eb.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
@@ -18,6 +18,7 @@ tags: JavaScript Notes
 - NaN 不等于NaN
 - +0 等于-0
 
+<!--more-->
 
 - 我个人建议无论什么情况下都不要使== true 和 == false。
 - (1) 如果x 为null，y 为undefined，则结果为true。
@@ -153,3 +154,10 @@ yield .. 和next(..) 这一对组合起来，在生成器的执行过程中构�
 - yield/next(..) 这一对不只是一种控制机制，实际上也是一种双向消息传递机制。yield .. 表达式本质上是暂停下来等待某个值，接下来的next(..) 调用会向被暂停的yield 表达式传回一个值（或者是隐式的undefined）。
 - 在异步控制流程方面，生成器的关键优点是：生成器内部的代码是以自然的同步/ 顺序方式表达任务的一系列步骤。其技巧在于，我们把可能的异步隐藏在了关键字yield 的后面，把异步移动到控制生成器的迭代器的代码部分。
 - 换句话说，生成器为异步代码保持了顺序、同步、阻塞的代码模式，这使得大脑可以更自然地追踪代码，解决了基于回调的异步的两个关键缺陷之一。
+
+• 如果要比较的两个值的任意一个（即一边）可能是true 或者false 值，那么要避免使
+用==，而使用===。
+• 如果要比较的两个值中的任意一个可能是特定值（0、"" 或者[]——空数组），那么避
+免使用==，而使用===。
+• 在所有其他情况下，使用== 都是安全的。不仅仅只是安全而已，这在很多情况下也会
+简化代码，提高代码的可读性。

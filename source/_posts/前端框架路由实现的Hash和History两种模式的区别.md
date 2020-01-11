@@ -1,8 +1,12 @@
 ---
 
 title: 前端框架路由实现的Hash和History两种模式的区别
+
 date: 2019-10-18 22:32
+
 tags: JavaScript 前端 路由 Angular Vue
+
+categories: JavaScript
 
 ---
 ![Hash vs History](https://upload-images.jianshu.io/upload_images/1741029-9e5d1063264044c0.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
@@ -16,6 +20,8 @@ tags: JavaScript 前端 路由 Angular Vue
 # 二、如何实现
 - 实现的两个核心问题是如何检测路由变化和如何改变URL而不刷新页面，通常有两种实现模式，一种是Hash模式，一种是History模式。
 
+<!--more-->
+
 # 三、Hash模式
 - 早期的前端路由的实现就是基于`location.hash`来实现的，`location.hash`的值就是URL中#后面的内容
 其实现原理就是监听#后面的内容来发起Ajax请求来进行局部更新，而不需要刷新整个页面。
@@ -27,7 +33,6 @@ tags: JavaScript 前端 路由 Angular Vue
 - hash值的改变，都会在浏览器的访问历史中增加一个记录，所以可以通过浏览器的回退、前进按钮控制hash的切换
 - 会覆盖锚点定位元素的功能
 - 不太美观，#后面传输的数据复杂的话会出现问题
-
 
 # 四、History模式
 - history 提供了 `pushState` 和 `replaceState` 两个方法来记录路由状态，这两个方法改变 URL 不会引起页面刷新

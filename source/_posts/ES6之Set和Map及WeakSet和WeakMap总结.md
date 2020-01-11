@@ -2,8 +2,8 @@
 
 title: ES6之Set和Map及WeakSet和WeakMap总结
 date: 2019-08-19 20:44
-tags: ES6 Set Map
-
+tags: ES6 Set Map WeakSet WeakMap
+categories: JavaScript ES6
 ---
 ![Set & Map](https://upload-images.jianshu.io/upload_images/1741029-96533cae7400a3a1.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
 # 一、Set
@@ -24,6 +24,8 @@ tags: ES6 Set Map
 `Set.prototype.values()`：返回键值的遍历器
 `Set.prototype.entries()`：返回键值对的遍历器
 `Set.prototype.forEach()`：使用回调函数遍历每个成员
+
+<!--more-->
 
 # 二、Map
 
