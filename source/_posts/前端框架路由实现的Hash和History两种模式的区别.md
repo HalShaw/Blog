@@ -29,7 +29,7 @@ categories: JavaScript
 
 ### 优缺点
 - 兼容低版本浏览器，Angular1.x和Vue默认使用的就是hash路由
-- 只有#符号之前的内容才会包含在请求中被发送到后端，也就是说就算后端没有对路由全覆盖，但是不会返回404错误
+- 只有#符号之前的内容才会包含在请求中被发送到后端，也就是说就算后端没有对路由全覆盖，也不会返回404错误
 - hash值的改变，都会在浏览器的访问历史中增加一个记录，所以可以通过浏览器的回退、前进按钮控制hash的切换
 - 会覆盖锚点定位元素的功能
 - 不太美观，#后面传输的数据复杂的话会出现问题
@@ -39,7 +39,7 @@ categories: JavaScript
 - history 提供类似 hashchange 事件的 popstate 事件，但 popstate 事件有些不同：通过浏览器前进后退改变 URL 时会触发 popstate 事件，通过pushState/replaceState或`<a>`标签改变 URL 不会触发 popstate 事件。好在我们可以拦截 pushState/replaceState的调用和`<a>`标签的点击事件来检测 URL 变化，所以监听 URL 变化可以实现，只是没有 hashchange 那么方便。
 - `pushState(state, title, url)` 和 `replaceState(state, title, url)`都可以接受三个相同的参数：
 - state：需要保存的数据，这个数据在触发popstate事件时，可以在event.state里获取
- - title：标题，基本没用，一般传 null
+- title：标题，基本没用，一般传 null
 - url：设定新的历史记录的 url，新的 url 与当前 url 的 origin 必须是一样的，否则会抛错，url可以是绝对路径，也可以是相对路径。
 
 ### 优缺点

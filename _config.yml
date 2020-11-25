@@ -6,7 +6,7 @@
 title: Shaw's blog.
 subtitle: Life is short, carpe diem.
 description: Some tech notes and life experience.
-keywords: 
+keywords: Shaw Xiaohao
 author: Shaw
 language: zh-Hans
 timezone:
@@ -41,7 +41,7 @@ future: true
 highlight:
   enable: true
   line_number: true
-  auto_detect: false
+  auto_detect: true
   tab_replace:
   
 # Home page setting
@@ -74,6 +74,24 @@ pagination_dir: page
 ## Plugins: https://hexo.io/plugins/
 ## Themes: https://hexo.io/themes/
 theme: next
+# RSS订阅
+feed:
+  type: atom
+  path: atom.xml
+  limit: 20
+  hub:
+  content:
+  content_limit: 140
+  content_limit_delim: ' '
+
+search:
+  path: search.xml
+  field: post
+  format: html
+  limit: 10000
+
+breadcrumb:
+  display: true
 
 # Deployment
 ## Docs: https://hexo.io/docs/deployment.html
